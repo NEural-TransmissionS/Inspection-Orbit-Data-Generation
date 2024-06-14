@@ -49,8 +49,6 @@ The satellite orbits approximately 50 m + (127.56 m / 2) ≈ 113.78 m from the E
 
    - Adjust settings as needed (e.g., resolution, rendering details, animation settings) or click render->render animation to generate data with
      default settings.
-   - Alternatively, run the script `orbit_around_satellite.py` to automate the process.
-
 
 ## Requirement
 
@@ -81,20 +79,8 @@ Satellite_Orbiting_Earth_Simulation/
   - `satellite_earth_model_for_3DGS.blend`: Blender file for the combined satellite and Earth model specifically for 3D Gaussian Splitting.
 - `Textures/`: Folder containing texture files for the models.
   - Download and paste the Earth texture from the provided [link](https://www.dropbox.com/scl/fo/f2skfbz0rla3fsx6obozq/ALqcuBhd0nejWNdZuNJWIzk?rlkey=mhp62ord46wv7kt8afqhm20dq&e=1&dl=0). (first unzip the folder and rename it to "Textures" and paste)
-- `Scripts/`: Folder for any Blender Python scripts used in the simulation.
-  - `orbit_around_satellite.py`: Script to control the satellite's orbit around Earth.
 - `Datasets/`: Folder to store generated datasets.
   - Will contain datasets generated from the simulation.
-
-## Contributing
-
-We welcome contributions to improve the simulation. If you have any suggestions or enhancements, please fork the repository, create a new branch, and submit a pull request.
-
-1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/YourFeature`)
-3. Commit your changes (`git commit -m 'Add some feature'`)
-4. Push to the branch (`git push origin feature/YourFeature`)
-5. Open a pull request
 
 ## License
 
