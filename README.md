@@ -35,8 +35,8 @@ The satellite orbits approximately 50 m + (127.56 m / 2) ≈ 113.78 m from the E
 1. **Clone the repository:**
 
    ```sh
-   git clone https://github.com/yourusername/satellite-orbit-simulation.git
-   cd satellite-orbit-simulation
+   git clone https://github.com/NEural-TransmissionS/Inspection-Orbit-Data-Generation.git
+   cd Inspection-Orbit-Data-Generation
    ```
 
 2. **Install Blender 4.0 or higher:** Follow the [official Blender installation guide](https://www.blender.org/download/). set folder's name and hierarchy as described in [Folder Structure](#folder-structure) section.
