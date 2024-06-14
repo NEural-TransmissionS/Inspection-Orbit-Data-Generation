@@ -72,8 +72,6 @@ Satellite_Orbiting_Earth_Simulation/
 │       └── "will have generated dataset"
 ├── Textures/
 │   └── "Download and Paste earth texture from the given link"
-├── Scripts/
-│   └── orbit_around_satellite.py
 ```
 
 - `Scene/`: Contains all scene-related files.
