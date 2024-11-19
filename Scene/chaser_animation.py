@@ -177,6 +177,12 @@ def generate_orbits(orbit_type, times, omega, delta_x, z0=0, orbit_csv=None):
         # initial change in velocity along z
         delta_v_z = omega*delta_x/4
         return CW(times, -delta_x/2, 0, 0, 0, 0, delta_v_z, omega)
+    
+    # Corkscrew Orbit
+    elif orbit_type == 'CORKSCREW':
+        # initial change in velocity along z
+        inclination = 45 * np.pi / 180
+        return CW(times, -delta_x, 0, 0, 0, delta_x*omega*np.sin(inclination), -delta_x*omega*np.sin(inclination), omega)
        
     # input orbit
     elif obit_type == 'CSV':
@@ -206,34 +212,36 @@ def lvlh_to_xyz_matrix(RSO_center, orbit_radius, omega, t):
     return np.array([x_lvlh, y_lvlh, z_lvlh]).T
 
 
-simulations_folder = '/home/rwhite/NFS/Ryan/Orbit Data Generation/Simulations/'
+simulations_folder = 'C:\Users\rwhite\Documents\GitHub'
 
-RSO = 'Cassini'
-# orbit = ['NMC', 5]
-orbit = ['VBAR', 5]
+#RSO = 'Cassini'
+RSO = 'Sentinel6'
+#orbit = ['NMC', 10]
+orbit = ['CORKSCREW', 1]
+#orbit = ['VBAR', 5]
 #orbit = ['NMC', 50]
 #orbit = ['COPLANAR', 5]
-dx = 7.5
-total_frames = 150
+#dx = 7.5
+#total_frames = 300
 #altitude = ['LEO', 1138]
 #altitude = ['LEO', 718]
 altitude = ['LEO', 638 + 80.0]
-altitude = ['GEO', 638 + 3578.6]
+#altitude = ['GEO', 638 + 3578.6]
 
 #for RSO in ['Cassini']:
 #    for orbit in ['NMC', 'VBAR', 'COPLANAR']:
-#        #for ic in [5, 10, 15, 30]:
-#        for ic in [3, 7.5]:
-#            for altitude in [['LEO', 718], ['GEO', 36424]]:
-#               
-#                scenario_folder = f'{RSO}_{altitude[0]}_{orbit}_dxz0_{ic:04.2f}_dt/'
-#               
-#                output_path = simulations_folder + scenario_folder
-#                           
+    for orbit in ['CORKSCREW']:
+        for ic in [1, 2.5, 5]:
+        #for ic in [3, 7.5]:
+            for altitude in [['LEO', 718], ['GEO', 36424]]:
+               
+                scenario_folder = f'{RSO}_{altitude[0]}_{orbit}_dxz0_{ic:04.2f}_dt/'
+               
+                output_path = simulations_folder + scenario_folder
 
-#                animate_RSO_and_chaser(RSO, 'Chaser Cam',
-#                                        altitude[1], orbit, delta_x=ic, z0=ic,
-#                                        total_frames=300, output_path=output_path, export_extrinsics=True)
+                animate_RSO_and_chaser(RSO, 'Chaser Cam',
+                                        altitude[1], orbit, delta_x=ic, z0=ic,
+                                        total_frames=300, output_path=output_path, export_extrinsics=True)
 
 #scenario_folder = f'{RSO}_{altitude[0]}_{altitude[1]}_{orbit}_dx_{dx:07.3f}_dt_{dt:07.3f}/'
 #output_path = simulations_folder + scenario_folder            
@@ -242,6 +250,6 @@ altitude = ['GEO', 638 + 3578.6]
 #                       altitude[1], orbit[0], delta_x=orbit[1], z0=orbit[1], total_frames=150,
 #                       output_path=output_path, export_extrinsics=True)
 
-animate_RSO_and_chaser(RSO, 'Chaser Cam',
-                       altitude[1], orbit[0], delta_x=orbit[1], z0=orbit[1],
-                       total_frames=300)
+#animate_RSO_and_chaser(RSO, 'Chaser Cam',
+#                       altitude[1], orbit[0], delta_x=orbit[1], z0=orbit[1],
+#                       total_frames=300)
